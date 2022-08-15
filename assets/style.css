@@ -1,0 +1,98 @@
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    
+    height: 100vh;
+    
+}
+
+.title{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+.container{
+    width: 100%;
+}
+.showForm{
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #955149;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    background-image: linear-gradient(to right,#ffffff ,#F1895C );
+}
+.DisplaycreatTask{
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+label{
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
+
+   
+}
+
+input, textarea{
+    width: 450px;
+    padding: 10px 5px;
+    margin-bottom: 15px;
+    border: none;
+    box-shadow: 0px 2px 5px black; ;
+}
+.creatTask{
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #955149;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    background-image: linear-gradient(to right,#ffffff ,#F1895C ); 
+}
+
+.displayTask{
+    display: none;
+}
+
+.urgent{
+ text-align: center;
+ font-size: 30px;
+ background-color:  #F1895C;
+ margin-top: 20px;
+ margin-bottom: 20px;
+ color: #2E3244;
+}
+
+.PriorotyNormal{
+    text-align: center;
+    font-size: 30px;
+    background-color:  #516079;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #FFFFFF;   
+}
+
+.PriorotySecondary{
+    text-align: center;
+    font-size: 30px;
+    background-color:  #C5C6C6;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #FFFFFF;   
+}

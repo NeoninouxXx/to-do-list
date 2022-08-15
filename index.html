@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
     <title>To do list</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <header>
+      <h1 class="title">To Do Liste</h1>
+      <div class="container">
+        <button class="showForm">Créer une nouvelle tâche</button>
+        <form class="DisplaycreatTask">
+          <div class="input-group">
+            <label for="taskName">Quelle est la tache à accomplire ?</label>
+            <input type="text" name="taskName" id="taskName" required />
+          </div>
+          <div class="input-group">
+            <label for="description">Description de la tache :</label>
+            <textarea
+              name="descpitionArea"
+              id="description"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="creatTask">Valider</button>
+        </form>
+        <div class="displayTask">
+          <div class="PriorotyPrimary">
+            <h3 class="urgent">Tache(s) urgent :</h3>
+          </div>
+          <div class="PriorotyNormal">
+            <h3 class="PriorotyNormal">Priorité normal :</h3>
+          </div>
+          <div class="PriorotySecondary">
+            <h3 class="PriorotySecondary">Priorité secondaire :</h3>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <script src="assets/script.js"></script>
-</body>
+  </body>
 </html>
