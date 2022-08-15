@@ -56,6 +56,12 @@ input, textarea{
     border: none;
     box-shadow: 0px 2px 5px black; ;
 }
+
+select{
+    padding: 2px 10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
 .creatTask{
     margin-top: 30px;
     font-size: 20px;
