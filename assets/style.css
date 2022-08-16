@@ -6,6 +6,7 @@
 header{
     
     height: 100vh;
+    background-color:#f1f1f1;
     
 }
 
@@ -61,6 +62,7 @@ select{
     padding: 2px 10px;
     font-size: 20px;
     margin-top: 10px;
+    font-family: 'Orbitron', sans-serif;
 }
 .creatTask{
     margin-top: 30px;
@@ -79,7 +81,7 @@ select{
 .urgent{
  text-align: center;
  font-size: 30px;
- background-color:  #F1895C;
+ background-image: linear-gradient(to right,#ffffff ,#F1895C ); 
  margin-top: 20px;
  margin-bottom: 20px;
  color: #2E3244;
@@ -88,17 +90,18 @@ select{
 .PriorotyNormal{
     text-align: center;
     font-size: 30px;
-    background-color:  #516079;
+    background-image: linear-gradient(to right,#ffffff ,#516079 ); 
     margin-top: 20px;
     margin-bottom: 20px;
-    color: #FFFFFF;   
+    color: #2E3244;  
 }
 
 .PriorotySecondary{
     text-align: center;
     font-size: 30px;
-    background-color:  #C5C6C6;
+    background-image: linear-gradient(to right,#ffffff ,#C5C6C6 );
     margin-top: 20px;
     margin-bottom: 20px;
-    color: #FFFFFF;   
+    color: #FFFFFF; 
+    color: #2E3244;  
 }
