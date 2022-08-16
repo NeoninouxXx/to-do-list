@@ -1,107 +1,111 @@
-*,::before,::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-header{
-    
-    height: 100vh;
-    background-color:#f1f1f1;
-    
-}
-
-.title{
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 900;
-    font-size: 50px;
-    text-align: center;
-    padding-top: 15px;
-}
-.container{
-    width: 100%;
-}
-.showForm{
-    display: block;
-    margin: 0 auto;
-    margin-top: 30px;
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: #955149;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    background-image: linear-gradient(to right,#ffffff ,#F1895C );
-}
-.DisplaycreatTask{
-    width: 750px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 50px;
-
-}
-label{
-    display: block;
-    font-size: 20px;
-    margin-bottom: 15px;
-    font-family: 'Orbitron', sans-serif;
-
-   
+header {
+  height: 100vh;
+  background-color: #f1f1f1;
 }
 
-input, textarea{
-    width: 450px;
-    padding: 10px 5px;
-    margin-bottom: 15px;
-    border: none;
-    box-shadow: 0px 2px 5px black; ;
+.title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 15px;
+}
+.container {
+  width: 100%;
+}
+.showForm {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #955149;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  background-image: linear-gradient(to right, #ffffff, #f1895c);
+}
+.DisplaycreatTask {
+  width: 750px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-family: "Orbitron", sans-serif;
 }
 
-select{
-    padding: 2px 10px;
-    font-size: 20px;
-    margin-top: 10px;
-    font-family: 'Orbitron', sans-serif;
-}
-.creatTask{
-    margin-top: 30px;
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: #955149;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    background-image: linear-gradient(to right,#ffffff ,#F1895C ); 
+input,
+textarea {
+  width: 450px;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+  border: none;
+  box-shadow: 0px 2px 5px black;
 }
 
-.displayTask{
-    display: none;
+select {
+  padding: 2px 10px;
+  font-size: 20px;
+  margin-top: 10px;
+  font-family: "Orbitron", sans-serif;
 }
 
-.urgent{
- text-align: center;
- font-size: 30px;
- background-image: linear-gradient(to right,#ffffff ,#F1895C ); 
- margin-top: 20px;
- margin-bottom: 20px;
- color: #2E3244;
+.textErro {
+  display: none;
 }
 
-.PriorotyNormal{
-    text-align: center;
-    font-size: 30px;
-    background-image: linear-gradient(to right,#ffffff ,#516079 ); 
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #2E3244;  
+.error {
+  font-size: 25px;
+  color: red;
+  font-family: "Orbitron", sans-serif;
+}
+.creatTask {
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #955149;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  background-image: linear-gradient(to right, #ffffff, #f1895c);
 }
 
-.PriorotySecondary{
-    text-align: center;
-    font-size: 30px;
-    background-image: linear-gradient(to right,#ffffff ,#C5C6C6 );
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #FFFFFF; 
-    color: #2E3244;  
+.urgent {
+  text-align: center;
+  font-size: 30px;
+  background-image: linear-gradient(to right, #ffffff, #f1895c);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #2e3244;
+}
+
+.PriorotyNormal {
+  text-align: center;
+  font-size: 30px;
+  background-image: linear-gradient(to right, #ffffff, #516079);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #2e3244;
+}
+
+.PriorotySecondary {
+  text-align: center;
+  font-size: 30px;
+  background-image: linear-gradient(to right, #ffffff, #c5c6c6);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  color: #2e3244;
 }

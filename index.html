@@ -21,7 +21,7 @@
         <form class="DisplaycreatTask">
           <div class="input-group">
             <label for="taskName">Quelle est la tache à accomplire ?</label>
-            <input type="text" name="taskName" id="taskName" required />
+            <input type="text" name="taskName" id="taskName"  />
           </div>
           <div class="input-group">
             <label for="description">Description de la tache :</label>
@@ -30,7 +30,7 @@
               id="description"
               cols="30"
               rows="10"
-              required
+              
             ></textarea>
           </div>
           <div class="input-group">
@@ -43,11 +43,12 @@
               </select>
             </label>
           </div>
+          <div class="textError"></div>
           <button type="submit" class="creatTask">Valider</button>
         </form>
         <div class="displayTask">
           <div class="PriorotyPrimary">
-            <h3 class="urgent"> urgent :</h3>
+            <h3 class="urgent">Urgent :</h3>
           </div>
           <div class="PriorotyNormal">
             <h3 class="PriorotyNormal">Priorité modéré :</h3>
