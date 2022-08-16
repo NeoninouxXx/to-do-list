@@ -5,6 +5,9 @@ const inputTaskName = document.getElementById("taskName");
 const description = document.getElementById("description");
 const priority = document.getElementById("priority");
 const displayError = document.querySelector(`.textError`);
+const urgent = document.querySelector(".PriorotyPrimary");
+const priorityNormal = document.querySelector(".PriorotyNormal");
+const prioritySecondary = document.querySelector(".PriorotySecondary");
 
 let toggle = false;
 
@@ -29,20 +32,24 @@ displayCreatTask.addEventListener(`submit`, handleSubmit);
 inputTaskName.addEventListener(`input`, delErrorStyle);
 description.addEventListener(`input`, delErrorStyle);
 
+function delErrorStyle() {
+  inputTaskName.style.border = "none";
+  description.style.border = "none";
+}
+
 function handleSubmit(e) {
   e.preventDefault();
   let validity = false;
   validity = checkValidity(inputTaskName.value, description.value);
 
   if (validity) {
-    inputTaskName.value = "";
-    description.value = "";
     displayCreatTask.style.display = "none";
     displayTask.style.display = "block";
     btnShowForm.textContent = "Créer une nouvelle tâche";
     toggle = false;
-
-    // displayCreatTask();
+    CreatTask(inputTaskName.value, description.value, priority.value);
+  } else {
+    return;
   }
 }
 
@@ -50,12 +57,12 @@ function checkValidity(nameValue, descriptionValue) {
   if (nameValue == "") {
     displayError.innerHTML = `<p class="error"> veuillez remplir tous les champs ! </p>`;
     inputTaskName.style.border = " solid 1px red";
-    setTimeout(() => displayError.remove(), 2500);
+    setTimeout(() => (displayError.textContent = ""), 2500);
     return false;
   } else if (descriptionValue == "") {
     displayError.innerHTML = `<p class="error"> veuillez remplir tous les champs ! </p>`;
     description.style.border = " solid 1px red";
-    setTimeout(() => displayError.remove(), 2500);
+    setTimeout(() => (displayError.textContent = ""), 2500);
     return false;
   } else {
     inputTaskName.style.border = "none";
@@ -64,7 +71,37 @@ function checkValidity(nameValue, descriptionValue) {
   }
 }
 
-function delErrorStyle() {
-  inputTaskName.style.border = "none";
-  description.style.border = "none";
+function CreatTask(nameValue, descriptionValue, priorityValue) {
+  const task = new Task(nameValue, descriptionValue, priorityValue);
+  task.addTask(task);
+  inputTaskName.value="";
+  description.value="";
+}
+
+class Task {
+  constructor(nameTask, discrib, prior) {
+    this.nameTask = nameTask;
+    this.discrib = discrib;
+    this.prior = prior;
+  }
+  addTask(task) {
+    const finalTask = document.createElement("div");
+    finalTask.classList.add("cardTask");
+    finalTask.innerHTML = `<p class="headerTask">${this.nameTask}</p>
+                            <p class="bodyTask"> ${this.discrib}</p>
+                             <button class="footerTask">Terminer</button>`;
+
+    if (this.prior == "Absolue") {
+      urgent.appendChild(finalTask);
+      return;
+    } else if (this.prior == "Normal") {
+      priorityNormal.appendChild(finalTask);
+      finalTask.style.boxShadow = "0px 5px 15px #2E3244";
+      return;
+    } else if (this.prior == "Secondaire") {
+      prioritySecondary.appendChild(finalTask);
+      finalTask.style.boxShadow = "0px 5px 15px #c5c6c6";
+      return;
+    }
+  }
 }
