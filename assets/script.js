@@ -16,7 +16,6 @@ btnShowForm.addEventListener(`click`, showForm);
 function showForm(e) {
   e.stopPropagation();
   toggle = !toggle;
-
   if (toggle) {
     displayCreatTask.style.display = "flex";
     displayTask.style.display = "none";
@@ -31,6 +30,7 @@ function showForm(e) {
 displayCreatTask.addEventListener(`submit`, handleSubmit);
 inputTaskName.addEventListener(`input`, delErrorStyle);
 description.addEventListener(`input`, delErrorStyle);
+displayTask.addEventListener("click", deletTask);
 
 function delErrorStyle() {
   inputTaskName.style.border = "none";
@@ -74,8 +74,13 @@ function checkValidity(nameValue, descriptionValue) {
 function CreatTask(nameValue, descriptionValue, priorityValue) {
   const task = new Task(nameValue, descriptionValue, priorityValue);
   task.addTask(task);
-  inputTaskName.value="";
-  description.value="";
+  inputTaskName.value = "";
+  description.value = "";
+}
+
+function deletTask(e) {
+  const taskDeleted = new Task();
+  taskDeleted.deletedTask(e.target);
 }
 
 class Task {
@@ -89,7 +94,8 @@ class Task {
     finalTask.classList.add("cardTask");
     finalTask.innerHTML = `<p class="headerTask">${this.nameTask}</p>
                             <p class="bodyTask"> ${this.discrib}</p>
-                             <button class="footerTask">Terminer</button>`;
+                             <button class="footerTask">Terminer</button>
+                             <button class ="deleted footerTask">Supprimer</button>`;
 
     if (this.prior == "Absolue") {
       urgent.appendChild(finalTask);
@@ -102,6 +108,11 @@ class Task {
       prioritySecondary.appendChild(finalTask);
       finalTask.style.boxShadow = "0px 5px 15px #c5c6c6";
       return;
+    }
+  }
+  deletedTask(target) {
+    if (target.classList.contains("deleted")) {
+      target.parentElement.remove();
     }
   }
 }
