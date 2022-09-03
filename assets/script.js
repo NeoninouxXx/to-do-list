@@ -31,6 +31,7 @@ displayCreatTask.addEventListener(`submit`, handleSubmit);
 inputTaskName.addEventListener(`input`, delErrorStyle);
 description.addEventListener(`input`, delErrorStyle);
 displayTask.addEventListener("click", deletTask);
+displayTask.addEventListener("click",taskDone);
 
 function delErrorStyle() {
   inputTaskName.style.border = "none";
@@ -79,8 +80,15 @@ function CreatTask(nameValue, descriptionValue, priorityValue) {
 }
 
 function deletTask(e) {
+  e.stopPropagation();
   const taskDeleted = new Task();
   taskDeleted.deletedTask(e.target);
+}
+function taskDone(e){
+  e.stopPropagation();
+  const taskCheck = new Task();
+  taskCheck.taskDone(e.target);
+
 }
 
 class Task {
@@ -94,7 +102,7 @@ class Task {
     finalTask.classList.add("cardTask");
     finalTask.innerHTML = `<p class="headerTask">${this.nameTask}</p>
                             <p class="bodyTask"> ${this.discrib}</p>
-                             <button class="footerTask">Terminer</button>
+                             <button class="footerTask  done">Terminer</button>
                              <button class ="deleted footerTask">Supprimer</button>`;
 
     if (this.prior == "Absolue") {
@@ -113,6 +121,18 @@ class Task {
   deletedTask(target) {
     if (target.classList.contains("deleted")) {
       target.parentElement.remove();
+    }
+    else{
+      return;
+    }
+  }
+  taskDone(target){
+    if(target.classList.contains("done")){
+      target.parentElement.style.opacity = "0.5";
+      target.parentElement.childNodes[4].remove();
+    }
+    else{
+      return;
     }
   }
 }
